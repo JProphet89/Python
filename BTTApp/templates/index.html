@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+  Stocks
+</p>
+<p>
+  <a href="/biker/newbiker" class="btn btn-default">New Biker</a>
+</p>
+{% if bikers %}
+    {% for biker in bikers %}
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-3">
+              <strong>Name: </strong>{{ biker.name }}
+            </div>
+            <div class="col-md-3">
+              <strong>Phone: </strong>{{biker.phone}}
+            </div>
+            <div class="col-md-3">
+              <a href="/biker/{{biker.id}}" class="btn btn-sm btn-default">View</a>
+              <a href="#" class="btn btn-sm btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if biker %}
+
+<h2>{{ biker.name }}</h2>
+
+<p>
+	<strong>Dorsal:</strong>{{ biker.id }}
+</p>
+
+<p>
+	<strong>Start Time:</strong>{{ biker.start_time }}
+</p>
+<p>
+	<strong>First Check:</strong>{{ biker.first_check }}
+</p>
+<p>
+	<strong>Second Check:</strong>{{ biker.second_check }}
+</p>
+
+<p>
+	<strong>Final Time:</strong>{{ biker.final_check }}
+</p>
+
+{% endif %}
+<p>
+	<a href="/" class="btn btn-primary"> Back </a>
+</p>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if prerror %}
+<h4><span class="label label-danger" style="font-weight: 300">{{ prerror }}</span></h4>
+{% endif %}
+<p>
+  Hello
+</p>
+<div class="row">
+  <div class="col-md-1">
+    <a href="/stock/" class="btn btn-default">Stock</a>
+  </div>
+  <div class="col-md-1">
+    <a href="/accounts/register" class="btn btn-default">Register</a>
+  </div>
+  <div class="col-md-1">
+    {% if user.is_authenticated %}
+      <a href="/accounts/logout" class="btn btn-default">Logout</a>
+    {% else %}
+      <a href="/accounts/login" class="btn btn-default">Login</a>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

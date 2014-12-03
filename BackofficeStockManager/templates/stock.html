@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+  Stocks
+</p>
+<p>
+  <a href="/stock/newproduct" class="btn btn-default">New Item</a>
+</p>
+{% if stocks %}
+    {% for stock in stocks %}
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-3">
+              <strong>Name: </strong>{{stock.name}}</br>
+              <strong>Ref: </strong>{{stock.ref}}
+            </div>
+            <div class="col-md-3">
+              <strong>Price: </strong>{{stock.price}} €</br>
+              <strong>Stock: </strong>{{stock.stock}}
+            </div>
+            <div class="col-md-3">
+              <strong>Brand: </strong>{{stock.brand}}</br>
+              
+            </div>
+            <div class="col-md-3">
+              <a href="/stock/upgrade/{{stock.id}}" class="btn btn-sm btn-default">Update</a> 
+              <a href="#" class="btn btn-sm btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}
